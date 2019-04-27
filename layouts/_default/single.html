@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  {{ partial "head.html" . }}
+  <body class="has-navbar-fixed-top">
+  {{ partial "nav-bar.html" . }}
+  <main class="container">
+    <header class="hero is-info" {{ if .Params.featuredimage }}style="background-image: url('{{ .Params.featuredimage }}')" parallax{{end}}>
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">{{ .Title }}</h1>
+            <h2 class="subtitle">Posted <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time></h2>
+          </div>
+        </div>
+      </header>
+    <article id="content">{{ .Content }}</article>
+  </main>
+
+  <div class="container">
+    <h1 class="title has-text-grey-lighter">More posts</h1>
+    {{ with .NextInSection }}
+      {{ .Render "li" }}
+    {{ end }}
+
+    {{ with .PrevInSection }}
+      {{ .Render "li" }}
+    {{ end }}
+  </div>
+    {{ partial "scroll-nav.html" . }}
+    {{ partial "footer.html" . }}
+    {{ partial "scripts.html" . }}
+
+  </body>
+</html>
