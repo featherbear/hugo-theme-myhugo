@@ -1,5 +1,5 @@
 <footer class="footer">
-  {{ if and (not .IsHome) (ne .Params.breadcrumb true) }}
+  {{ if and (not .IsHome) (ne .Params.breadcrumb false) }}
   <nav class="breadcrumb is-right" aria-label="breadcrumbs">
     <ul>
       <li><a href="{{ .Site.BaseURL }}">blog</a></li>
