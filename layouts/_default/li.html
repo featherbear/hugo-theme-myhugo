@@ -1,10 +1,10 @@
 <div class="listArticle">
   <a href="{{ .Permalink }}">
     <article class="media">
-      {{ if isset .Params "featuredimage" }}
+      {{ if .Params.featuredImage }}
         <figure class="media-left">
           <p class="image is-128x128">
-            <img src="{{ .Params.featuredimage }}">
+            <img src="{{ .Params.featuredImage | relURL }}">
           </p>
         </figure>
       {{ end }}

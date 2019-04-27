@@ -4,7 +4,7 @@
   <body class="has-navbar-fixed-top">
   {{ partial "nav-bar.html" . }}
   <main class="container">
-    <header class="hero is-info" {{ if .Params.featuredimage }}style="background-image: url('{{ .Params.featuredimage }}')" parallax{{end}}>
+    <header class="hero is-info" {{ if .Params.featuredimage }}style="background-image: url('{{ .Params.featuredimage | relURL }}')" parallax{{end}}>
         <div class="hero-body">
           <div class="container">
             <h1 class="title">{{ .Title }}</h1>
