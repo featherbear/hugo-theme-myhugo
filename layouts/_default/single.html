@@ -29,5 +29,14 @@
     {{ partial "footer.html" . }}
     {{ partial "scripts.html" . }}
 
+    <script>
+      {
+        let max = document.body.scrollHeight - window.innerHeight;
+        window.addEventListener('scroll', function() {
+          document.getElementById('scroll-nav').style.width = `${this.scrollY / max * 100}%`
+        });
+        document.getElementById('scroll-nav').style.width = `${window.scrollY / max * 100}%`
+      }
+    </script>
   </body>
 </html>
