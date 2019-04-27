@@ -17,10 +17,10 @@
     <div id="navmenu" class="navbar-menu">
       <div class="navbar-end">
         {{ $categories := .Site.Taxonomies.categories }}
-        {{ range .Site.Menus.main }}
-          {{ if eq .URL "_blog_" }}
+        {{ range .Site.Params.links }}
+          {{ if eq .path "_blog_" }}
             <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link has-text-black-ter is-arrowless" href="{{ $_SiteBaseURL }}">{{ .Name }}</a>
+                <a class="navbar-link has-text-black-ter is-arrowless" href="{{ $_SiteBaseURL }}">{{ .name }}</a>
                 <div class="navbar-dropdown">
                     {{ range $key, $value := $categories -}}
                       <a href="{{ (printf "%s%s" "categories/" ($key | urlize)) | relURL }}" class="navbar-item">{{ $key }}</a>
@@ -30,7 +30,7 @@
                 </div>
             </div>
           {{ else }}
-            <a class="navbar-item has-text-grey" href="{{ .URL | safeURL }}">{{ .Name }}</a>
+            <a class="navbar-item has-text-grey" href="{{ .path | safeURL }}">{{ .name }}</a>
           {{ end }}
         {{ end }}
       </div>
