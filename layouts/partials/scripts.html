@@ -1,0 +1,8 @@
+<script src='{{ "assets/elevator.js/elevator.min.js" | relURL}}'></script>
+<script type="text/javascript">
+  var elevator = new Elevator({
+    element: document.querySelector(".footer .logo"),
+    mainAudio: '{{ relURL "assets/elevator.js/elevator.mp3" }}',
+    endAudio: '{{ relURL "assets/elevator.js/ding.mp3" }}'
+  });
+</script>
