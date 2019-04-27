@@ -1,0 +1,39 @@
+{{ $_SiteBaseURL := .Site.BaseURL }}
+<nav class="navbar is-fixed-top is-unselectable" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item has-text-grey-darker is-size-3" href="{{ $_SiteBaseURL }}">
+        {{ $.Site.Params.brand }}
+        <!-- <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" /> -->
+      </a>
+
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navmenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navmenu" class="navbar-menu">
+      <div class="navbar-end">
+        {{ $categories := .Site.Taxonomies.categories }}
+        {{ range .Site.Menus.main }}
+          {{ if eq .URL "_blog_" }}
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link has-text-black-ter is-arrowless" href="{{ $_SiteBaseURL }}">{{ .Name }}</a>
+                <div class="navbar-dropdown">
+                    {{ range $key, $value := $categories -}}
+                      <a href="{{ (printf "%s%s" "categories/" ($key | urlize)) | relURL }}" class="navbar-item">{{ $key }}</a>
+                    {{- end }}
+                    <!-- <hr class="navbar-divider" /> -->
+                    <!-- <a class="navbar-item">...</a> -->
+                </div>
+            </div>
+          {{ else }}
+            <a class="navbar-item has-text-grey" href="{{ .URL | safeURL }}">{{ .Name }}</a>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</nav>
