@@ -2,7 +2,7 @@
   {{ if and (not .IsHome) (ne .Params.breadcrumb false) }}
   <nav class="breadcrumb is-right" aria-label="breadcrumbs">
     <ul>
-      <li><a href="{{ .Site.BaseURL }}">blog</a></li>
+      <!-- <li><a href="{{ .Site.BaseURL }}">blog</a></li> -->
       {{ $_pathTokens := split .RelPermalink "/" }}
       {{ $_len_pathTokens := len $_pathTokens }}
 
@@ -20,12 +20,14 @@
       </li>
       {{ else }}
       <li>
-        <a href="{{ range seq $i }}../{{ end }}">{{ $path }}</a>
+        {{ $ii := sub $len_pathTokens $i}}
+        <a href="{{ range seq $ii }}../{{ end }}">{{ $path }}</a>
       </li>
       {{ end }}
       {{ end }}
     </ul>
   </nav>
+  <hr>
   {{ end }}
   {{ if $.Site.Params.brandimg }}
     <figure class="image is-128x128" style="margin: 0 auto;">
