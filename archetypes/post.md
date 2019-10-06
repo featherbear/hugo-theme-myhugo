@@ -6,4 +6,7 @@ categories: []
 featuredImage: ""
 displayInList: true
 breadcrumb: true
+
+stickyInGlobal: false
+stickyInCategory: false
 ---
