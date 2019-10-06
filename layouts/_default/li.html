@@ -14,9 +14,11 @@
           <div class="level-left">
             <p class="subtitle">{{ if (isset .Params "description") }}{{ index .Params "description" }}{{ end }}</p>
           </div>
+          {{ if ne .Params.showdateinlist false }}
           <div class="level-right">
             <p>Posted <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time></p>
           </div>
+          {{ end }}
         </div>
       </div>
     </article>

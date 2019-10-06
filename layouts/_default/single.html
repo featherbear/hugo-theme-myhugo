@@ -8,7 +8,9 @@
         <div class="hero-body">
           <div class="container">
             <h1 class="title">{{ .Title }}</h1>
+            {{ if ne .Params.showdateinpost false }}
             <h2 class="subtitle">Posted <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time></h2>
+            {{ end }}
           </div>
         </div>
       </header>

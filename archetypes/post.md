@@ -9,4 +9,7 @@ breadcrumb: true
 
 stickyInGlobal: false
 stickyInCategory: false
+
+showDateInList: true
+showDateInPost: true
 ---
