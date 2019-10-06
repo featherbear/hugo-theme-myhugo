@@ -12,4 +12,6 @@ stickyInCategory: false
 
 showDateInList: true
 showDateInPost: true
+
+showCategoriesInList: true
 ---

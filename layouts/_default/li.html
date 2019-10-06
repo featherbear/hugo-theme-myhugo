@@ -22,7 +22,15 @@
         </div>
       </div>
     </article>
-    <p class="is-unselectable">{{ range .Params.categories }}<a href="{{ (printf "%s%s" "categories/" (. | urlize)) | relURL }}"><span class="tag is-info">#{{ . }}</span></a> {{ end }}</p>
+    {{ if ne .Params.showcategoriesinlist false }}
+      <div class="is-unselectable categories">
+      {{ range .Params.categories }}
+        <a href="{{ (printf "%s%s" "categories/" (. | urlize)) | relURL }}" >
+          <span class="tag is-info">#{{ . }}</span>
+        </a>
+      {{ end }}
+    {{ end }}
+    </div>
   </a>
 </div>
 

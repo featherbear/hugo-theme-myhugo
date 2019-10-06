@@ -39,10 +39,10 @@ main #content {
   margin-bottom: 20px;
   flex: 1;
 }
- 
+
 .listArticle {
   background-color: white;
-  padding: 10px;
+  padding: 15px;
   border-radius: 2px;
   margin-bottom: 20px
 }
@@ -50,6 +50,12 @@ main #content {
 .listArticle p.image {
     height: 100%;
 }
+
+.listArticle .categories {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 
 body {
   background-attachment: fixed;
@@ -110,3 +116,4 @@ blockquote {
 blockquote:hover {
   background-color: rgb(220,220,220);
 }
+
