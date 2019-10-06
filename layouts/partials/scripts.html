@@ -1,3 +1,12 @@
+<link rel="stylesheet" href="{{ "assets/luminous.js/luminous-basic.min.css" | relURL }}" />
+<script src='{{ "assets/luminous.js/Luminous.min.js" | relURL}}'></script>
+<script type="text/javascript">
+document.querySelectorAll("#content img").forEach(e => new Luminous(e , {
+    sourceAttribute: "src"
+  })
+)
+</script>
+
 <script src='{{ "assets/elevator.js/elevator.min.js" | relURL}}'></script>
 <script type="text/javascript">
   var elevator = new Elevator({

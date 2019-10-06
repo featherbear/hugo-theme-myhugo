@@ -99,7 +99,11 @@ p {
   padding: 1.5rem 1.5rem 1.5rem
 }
 
-
+#content img {
+  cursor: pointer;
+  height: 30vh;
+  border-radius: 3px;
+}
 
 blockquote {
   margin-top: 5px;
@@ -116,3 +120,7 @@ blockquote:hover {
   background-color: rgb(220,220,220);
 }
 
+.imageFWcontainer img {
+  width: 100% !important;
+  height: auto !important;
+}
