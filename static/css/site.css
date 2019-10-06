@@ -107,6 +107,10 @@ p {
   padding: 1.5rem 1.5rem 1.5rem
 }
 
+img {
+  image-orientation: from-image;
+}
+
 #content img {
   cursor: pointer;
   height: 30vh;
