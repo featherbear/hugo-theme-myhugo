@@ -17,7 +17,7 @@
         {{ end }}
       </div>
       {{ end }}
-      {{ $paginator := .Paginate ((where .Pages "Params.displayinlist" "==" true) | complement $stickyPages ) }}
+      {{ $paginator := .Paginate ((where .Pages "Params.displayinlist" "!=" false) | complement $stickyPages ) }}
       {{ range $paginator.Pages }}
         {{ .Render "li" }}
       {{ end }}
