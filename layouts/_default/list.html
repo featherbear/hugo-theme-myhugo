@@ -8,15 +8,15 @@
         <p class="list-header-subtext">{{ .Description }}</p>
         <h1 class="title has-text-light has-text-centered is-size-1">{{ .Title }}</h1>
       </header>
-      <div class="stickyItems"> 
       {{ $stickyPages := where .Pages "Params.stickyinglobal" "==" true }}
       {{ if ne $.Section "" }}
+      <div class="stickyItems"> 
         {{ $stickyPages = $stickyPages | union (where .Pages "Params.stickyincategory" "==" true) }}
-      {{ end }}
-      {{ range $stickyPages }}
-        {{ .Render "li" }}
-      {{ end }}
+        {{ range $stickyPages }}
+          {{ .Render "li" }}
+        {{ end }}
       </div>
+      {{ end }}
       {{ $paginator := .Paginate ((where .Pages "Params.displayinlist" "==" true) | complement $stickyPages ) }}
       {{ range $paginator.Pages }}
         {{ .Render "li" }}
