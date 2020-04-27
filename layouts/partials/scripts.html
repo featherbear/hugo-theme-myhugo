@@ -11,7 +11,7 @@ document.querySelectorAll("#content img").forEach(e => new Luminous(e , {
 <script type="text/javascript">
   var elevator = new Elevator({
     element: document.querySelector(".footer .logo"),
-    mainAudio: '{{ relURL "assets/elevator.js/elevator.mp3" }}',
-    endAudio: '{{ relURL "assets/elevator.js/ding.mp3" }}'
+    mainAudio: '{{ "assets/elevator.js/elevator.mp3" | relURL }}',
+    endAudio: '{{ "assets/elevator.js/ding.mp3" | relURL }}'
   });
 </script>
