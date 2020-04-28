@@ -136,3 +136,15 @@ blockquote:hover {
   width: 100% !important;
   height: auto !important;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse; 
+}
+td {
+ padding: 3px;
+ border: 1px solid #A7A7A7;
+}
+th[align=center], td[align=center] {
+  text-align: center;
+}
