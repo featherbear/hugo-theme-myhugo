@@ -85,6 +85,16 @@ h2 {
   font-weight: bold;
 }
 
+h3 {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1.0em;
+  font-weight: bold;
+}
+
 ul {
   list-style: inherit;
 }
@@ -148,3 +158,4 @@ td {
 th[align=center], td[align=center] {
   text-align: center;
 }
+
