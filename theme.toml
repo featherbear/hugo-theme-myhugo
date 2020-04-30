@@ -5,11 +5,11 @@ name = "MyHugo"
 license = "MIT"
 licenselink = "https://github.com/featherbear/hugo-theme-myhugo/blob/master/LICENSE"
 description = "Custom theme for my personal site"
-homepage = "https://featherbear.github.io/hugo-theme-myhugo"
+homepage = "https://github.com/featherbear/hugo-theme-myhugo"
 tags = []
 features = []
 min_version = "0.41"
 
 [author]
   name = "featherbear"
-  homepage = "https://featherbear.github.io"
+  homepage = "https://featherbear.cc"
