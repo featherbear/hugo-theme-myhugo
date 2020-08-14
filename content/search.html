@@ -1,0 +1,109 @@
+---
+title: "Search"
+type: page
+private: true
+---
+
+<header class="list-header">
+  <h1 class="title has-text-light has-text-centered is-size-1">Search</h1>
+</header>
+
+<div class="field">
+  <div class="control">
+    <input
+      id="searchBox"
+      class="input"
+      type="text"
+      placeholder="Search for something"
+    />
+  </div>
+</div>
+
+<div id="searchResults" class="container"></div>
+<script>
+  (function () {
+    function createCard(data) {
+      // hek i'm writing pure js again
+      let card = document.createElement("div");
+      card.className = "listArticle";
+      card.innerHTML = `
+     <a href="${data.uri}">
+   	<article class="media">
+         <div class="media-content">
+           <h2 class="title is-marginless">${data.title}</h2>
+           <div class="level">
+             <div class="level-left">
+               <p class="subtitle">${data.description || ""}</p>
+             </div>
+           </div>
+         </div>
+       </article>
+     </a>
+   `;
+
+      if (data.image) {
+        let figure = document.createElement("figure");
+        figure.className = "media-left";
+        figure.innerHTML = `<p class="image is-128x128"><img src="${data.image}"></p>`;
+        card.querySelector("article").prepend(figure);
+      }
+
+      if (data.categories) {
+        let categories = document.createElement("div");
+        categories.className = "is-unselectable categories";
+
+        for (let name of data.categories) {
+          let category = document.createElement("a");
+          category.href =
+            "../categories/" + name.replace(/ /g, "-").toLowerCase();
+          category.innerHTML = `<span class="tag is-info">${name}</span>        `;
+
+          categories.appendChild(category);
+        }
+        card.querySelector("a").append(categories);
+      }
+
+      return card;
+    }
+
+    /*
+   	   <!-- {{ if ne .Params.showcategoriesinlist false }}
+
+         {{ range .Params.categories }}
+
+         {{ end }}
+   	{{ end }} -->
+   	*/
+
+    let searchBox = document.getElementById("searchBox");
+    let searchResults = document.getElementById("searchResults");
+
+    let searchBusy = false;
+
+    const listenSearch = () => {
+      const doSearch = () => {
+        if (searchBusy) return;
+
+        try {
+          searchBusy = true;
+          searchResults.innerHTML = "";
+
+          for (let item of searchPosts(searchBox.value)) {
+            let elem = createCard(item);
+            searchResults.appendChild(elem);
+          }
+        } finally {
+          searchBusy = false;
+        }
+      };
+      searchBox.addEventListener("input", doSearch);
+      doSearch();
+    };
+
+    if (window.searchPosts) {
+      listenSearch();
+    } else {
+      window._searchPostReady = listenSearch;
+    }
+  })();
+</script>
