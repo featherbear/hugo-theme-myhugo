@@ -14,6 +14,9 @@ header.hero[parallax] {
   box-shadow: 0 0 10px #6ba6dd;
 }
 
+#navmenu .links .navbar-dropdown a:last-child {
+  border-top: 1px solid #4a4a4a;
+}
 body {
   display: flex;
   min-height: 100vh;

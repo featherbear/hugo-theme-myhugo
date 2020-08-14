@@ -18,12 +18,13 @@
         {{ $categories := .Site.Taxonomies.categories }}
         {{ range .Site.Params.links }}
           {{ if eq .path "_blog_" }}
-            <div class="navbar-item has-dropdown is-hoverable">
+            <div class="navbar-item has-dropdown is-hoverable links">
                 <a class="navbar-link has-text-black-ter is-arrowless" href='{{ "/" | relURL }}'>{{ .name }}</a>
                 <div class="navbar-dropdown">
                     {{ range $key, $value := $categories -}}
                       <a href="{{ (printf "%s%s" "categories/" ($key | urlize)) | relURL }}" class="navbar-item">{{ $key }}</a>
                     {{- end }}
+                    <a href="{{ "search/" | relURL }}" class="navbar-item">Search Blog</a>
                 </div>
             </div>
           {{ else }}
