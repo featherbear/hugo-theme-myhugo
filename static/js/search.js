@@ -15,6 +15,7 @@ const searchInit = async endpoint => {
   // TODO: Use indexedDB
 
   if (
+    buildHash === 'REPLACE_ME' ||
     localStorage.getItem('__siteBuildHash') !== buildHash ||
     (data = tryParse(localStorage.getItem('__siteContent'))) === null ||
     location.hostname === 'localhost'
