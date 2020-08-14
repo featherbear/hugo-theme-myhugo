@@ -26,7 +26,7 @@ const searchInit = async endpoint => {
   }
 
   search.addIndex('title')
-  search.addIndex('summary')
+  search.addIndex('description')
   search.addDocuments(data)
   window.searchPosts = search.search.bind(search)
   if (window._searchPostReady) {
