@@ -162,6 +162,7 @@ th[align=center], td[align=center] {
   text-align: center;
 }
 
-img.lum-img {
-  width: 100% !important;
+.lum-lightbox-inner img {
+  max-width: 100% !important;
+  max-height: 100% !important;
 }
