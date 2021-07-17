@@ -5,6 +5,10 @@ header.hero[parallax] {
   background-size: cover;
 }
 
+header.hero[parallax] .hero-body {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 #scroll-nav {
   position: fixed;
   left: 0;
