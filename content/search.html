@@ -96,6 +96,11 @@ private: true
           searchBusy = false;
         }
       };
+      
+      let preSearch = /\?q=(.*)$/.exec(location.search)
+      if (preSearch && preSearch[1]) {
+        searchBox.value = preSearch[1]
+      }
       searchBox.addEventListener("input", doSearch);
       doSearch();
     };
