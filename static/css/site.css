@@ -55,7 +55,14 @@ main #content {
   background-color: white;
   padding: 15px;
   border-radius: 2px;
-  margin-bottom: 20px
+  margin-bottom: 20px;
+
+  transition: transform 0.3s;
+  transform: scale(100%);
+}
+
+.listArticle:hover {
+  transform: scale(101%);
 }
 
 .listArticle p.image {
