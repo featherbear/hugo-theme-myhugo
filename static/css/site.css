@@ -131,6 +131,10 @@ p {
   padding: 1.5rem 1.5rem 1.5rem
 }
 
+.footer .logo {
+  cursor: pointer; 
+}
+
 img {
   image-orientation: from-image;
 }
