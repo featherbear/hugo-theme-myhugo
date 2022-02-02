@@ -17,7 +17,7 @@
     <article id="content">{{ .Content }}</article>
   </main>
 
-  {{ if or (isset .Params "previous") (isset .Params "continue"))}}
+  {{ if or (isset .Params "previous") (isset .Params "continue") }}
     <div class="container">
       {{ if (isset .Params "previous") }}
         <div class="container">
