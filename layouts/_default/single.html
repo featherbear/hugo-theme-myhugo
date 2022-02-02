@@ -17,6 +17,15 @@
     <article id="content">{{ .Content }}</article>
   </main>
 
+  {{ if (isset .Params "continue") }}
+  <div class="container">
+    <h1 class="title has-text-grey-lighter">Continue reading</h1>
+    {{ with .Site.GetPage "page" "post" .Params.continue }}
+      {{ .Render "li" }}
+    {{ end }}
+  </div>
+  {{ end }}
+
   <div class="container">
     <h1 class="title has-text-grey-lighter">More posts</h1>
     {{ with .NextInSection }}
