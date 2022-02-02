@@ -18,23 +18,25 @@
   </main>
 
   {{ if or (isset .Params "previous") (isset .Params "continue"))}}
-    {{ if (isset .Params "previous") }}
-      <div class="container">
-        <h1 class="title has-text-grey-lighter">Previously</h1>
-        {{ with .Site.GetPage "page" .Params.previous }}
-          {{ .Render "li" }}
-        {{ end }}
-      </div>
-    {{ end }}
+    <div class="container">
+      {{ if (isset .Params "previous") }}
+        <div class="container">
+          <h1 class="title has-text-grey-lighter">Previously</h1>
+          {{ with .Site.GetPage "page" .Params.previous }}
+            {{ .Render "li" }}
+          {{ end }}
+        </div>
+      {{ end }}
 
-    {{ if (isset .Params "continue") }}
-      <div class="container">
-        <h1 class="title has-text-grey-lighter">Continue reading</h1>
-        {{ with .Site.GetPage "page" .Params.continue }}
-          {{ .Render "li" }}
-        {{ end }}
-      </div>
-    {{ end }}
+      {{ if (isset .Params "continue") }}
+        <div class="container">
+          <h1 class="title has-text-grey-lighter">Continue reading</h1>
+          {{ with .Site.GetPage "page" .Params.continue }}
+            {{ .Render "li" }}
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
   {{ end }}
 
   <div class="container">
