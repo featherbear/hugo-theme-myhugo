@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
   {{ partial "head.html" . }}
-  <body class="has-navbar-fixed-top">
+  <body class="has-navbar-fixed-top post">
   {{ partial "nav-bar.html" . }}
   <main class="container">
     <header class="hero is-info" {{ if .Params.featuredimage }}style="background-image: url('{{ .Params.featuredimage | relURL }}')" parallax{{end}}>
@@ -17,13 +17,24 @@
     <article id="content">{{ .Content }}</article>
   </main>
 
-  {{ if (isset .Params "continue") }}
-  <div class="container">
-    <h1 class="title has-text-grey-lighter">Continue reading</h1>
-    {{ with .Site.GetPage "page" .Params.continue }}
-      {{ .Render "li" }}
+  {{ if or (isset .Params "previous") (isset .Params "continue"))}}
+    {{ if (isset .Params "previous") }}
+      <div class="container">
+        <h1 class="title has-text-grey-lighter">Previously</h1>
+        {{ with .Site.GetPage "page" .Params.previous }}
+          {{ .Render "li" }}
+        {{ end }}
+      </div>
     {{ end }}
-  </div>
+
+    {{ if (isset .Params "continue") }}
+      <div class="container">
+        <h1 class="title has-text-grey-lighter">Continue reading</h1>
+        {{ with .Site.GetPage "page" .Params.continue }}
+          {{ .Render "li" }}
+        {{ end }}
+      </div>
+    {{ end }}
   {{ end }}
 
   <div class="container">

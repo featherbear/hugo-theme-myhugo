@@ -51,6 +51,10 @@ main #content {
   flex: 1;
 }
 
+body.post main.container + .container {
+  margin-top: 50px
+}
+
 .listArticle {
   background-color: white;
   padding: 15px;
