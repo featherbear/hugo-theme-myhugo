@@ -1,3 +1,11 @@
+:root {
+  --contentBorderRadius: 5px;
+}
+
+iframe[src^="https://www.youtube.com"] {
+  border-radius: var(--contentBorderRadius);
+}
+
 header.hero[parallax] {
   background-attachment: fixed;
   background-position: bottom;
@@ -146,7 +154,7 @@ img {
 #content img {
   cursor: pointer;
   max-height: 30vh;
-  border-radius: 3px;
+  border-radius: var(--contentBorderRadius);
 }
 
 blockquote {
