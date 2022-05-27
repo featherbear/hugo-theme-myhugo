@@ -274,6 +274,7 @@ div.code-toolbar > .toolbar > .toolbar-item > button:focus,
 div.code-toolbar > .toolbar > .toolbar-item > button:hover,
 div.code-toolbar > .toolbar > .toolbar-item > span:focus,
 div.code-toolbar > .toolbar > .toolbar-item > span:hover {
-  color: inherit;
+  color: white;
+  /* color: inherit; */
   text-decoration: none;
 }
