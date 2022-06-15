@@ -99,6 +99,7 @@ body {
 
 html {
   overflow-y: initial;
+  scroll-padding-top: 3.25rem;
 }
 
 h1 {
