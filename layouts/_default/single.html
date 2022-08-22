@@ -19,19 +19,19 @@
 
   {{ if or (isset .Params "previous") (isset .Params "continue") }}
     <div class="container">
-      {{ if and (isset .Params "previous") (.Params.previous) }}
-        <div class="container">
-          <h1 class="title has-text-grey-lighter">Previously</h1>
-          {{ with .Site.GetPage "page" .Params.previous }}
-            {{ .Render "li" }}
-          {{ end }}
-        </div>
-      {{ end }}
-
       {{ if and (isset .Params "continue") (.Params.continue) }}
         <div class="container">
           <h1 class="title has-text-grey-lighter">Continue reading</h1>
           {{ with .Site.GetPage "page" .Params.continue }}
+            {{ .Render "li" }}
+          {{ end }}
+        </div>
+      {{ end }}
+      
+      {{ if and (isset .Params "previous") (.Params.previous) }}
+        <div class="container">
+          <h1 class="title has-text-grey-lighter">Previously</h1>
+          {{ with .Site.GetPage "page" .Params.previous }}
             {{ .Render "li" }}
           {{ end }}
         </div>
