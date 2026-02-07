@@ -16,6 +16,10 @@ document.querySelectorAll("#content img").forEach(e => new Luminous(e , {
   });
 </script>
 
+{{ if and (isset $.Site.Params "umamihost") (isset $.Site.Params "umamiid") }}
+<script defer src="https://{{ $.Site.Params.umamihost }}/script.js" data-website-id="{{ $.Site.Params.umamiid }}"></script>
+{{ end }}
+
 {{ if and (isset $.Site.Params "fathomhost") (isset $.Site.Params "fathomsiteid") }}
 <script>
 (function(f, a, t, h, o, m){
